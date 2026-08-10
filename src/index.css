@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+@theme {
+  --color-primary: #0f4c81;
+  --color-primary-light: #2c7bb6;
+  --color-primary-dark: #0a365c;
+  --color-secondary: #f0f7ff;
+  --color-accent: #f59e0b;
+  
+  --font-sans: "Inter", "Roboto", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply text-slate-800 bg-slate-50 antialiased selection:bg-primary-light selection:text-white font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-slate-900 tracking-tight;
+  }
+
+  /* Accessible focus rings instead of the browser default, but only for keyboard users */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-light ring-offset-2 ring-offset-white rounded-sm;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/40 shadow-lg;
+  }
+  
+  .glass-dark {
+    @apply bg-slate-900/60 backdrop-blur-lg border border-white/10 shadow-2xl;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(15,76,129,0.12)] hover:border-primary/20 hover:bg-white/90;
+  }
+
+  .glass-panel {
+    @apply bg-gradient-to-br from-white/90 to-white/50 backdrop-blur-lg border border-white/50 shadow-xl;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(255,255,255,0.8);
+  }
+  
+  .box-glow {
+    box-shadow: 0 0 30px rgba(44,123,182,0.5);
+  }
+}
+
+/* ---------- Animations ---------- */
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float 6s ease-in-out 3s infinite;
+}
+
+/* Powers the shimmer sweep used in Button.jsx (this keyframe was missing before) */
+@keyframes shimmer {
+  0% { transform: translateX(-150%) skewX(-15deg); }
+  100% { transform: translateX(150%) skewX(-15deg); }
+}
+
+/* Scroll-reveal, driven by the useReveal hook / Section component */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+}
+.reveal.is-visible {
+  animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Subtle scale-in for badges / cards popping into view */
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-pop-in {
+  animation: popIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Ambient mesh background elements */
+.ambient-orb {
+  @apply absolute rounded-full mix-blend-multiply filter blur-3xl opacity-50;
+  animation: float 10s ease-in-out infinite;
+}
+.ambient-orb-dark {
+  @apply absolute rounded-full mix-blend-screen filter blur-[100px] opacity-40;
+  animation: float 12s ease-in-out infinite;
+}
+
+/* Respect users who don't want motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
