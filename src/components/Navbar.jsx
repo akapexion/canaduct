@@ -37,7 +37,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <img src="./logo.png" alt="" />
+            {/* <img src="./logo.png" alt="" /> */}
+            <span className='font-bold text-xl'>Top Line Duct Cleaning Inc</span>
           </Link>
 
           {/* Desktop Nav */}
