@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, CheckCircle, Clock, Star, Wind, Flame } from 'lucide-react';
+import { ArrowRight, Shield, CheckCircle, Clock, Star, Wind, Flame, Droplet, Sun, Layers, Sparkles } from 'lucide-react';
 import Section from '../components/Section';
 import Button from '../components/Button';
 import Card from '../components/Card';
@@ -226,6 +226,105 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </div>
+      </Section>
+
+      {/* Indoor Air Quality Showcase Section */}
+      <Section id="air-quality" bg="white" className="relative overflow-hidden">
+        <div className="ambient-orb bg-primary-light/10 w-[800px] h-[800px] -bottom-1/4 -left-1/4 -z-10 animate-float-delayed"></div>
+        
+        <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">Indoor Air <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">Quality Solutions</span></h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-primary-light mx-auto mb-6 rounded-full"></div>
+          <p className="text-lg text-slate-600">
+            Professional systems integrated with your home ventilation to actively sanitize, filter, and humidify your indoor air.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+          {/* HEPA Cleaners */}
+          <Card variant="glass" className="flex flex-col h-full group p-2">
+            <div className="h-48 rounded-xl bg-slate-100 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10"></div>
+              <div className="absolute inset-0 bg-primary flex items-center justify-center transform group-hover:scale-110 transition-transform duration-700">
+                 <Wind className="h-24 w-24 text-white/20" />
+              </div>
+              <div className="absolute bottom-4 left-4 z-20">
+                 <h3 className="text-xl font-bold text-white text-glow">HEPA Air Cleaner</h3>
+              </div>
+            </div>
+            <div className="p-4 flex flex-col flex-grow">
+              <p className="text-slate-600 mb-6 flex-grow leading-relaxed text-sm">
+                Medical-grade air filtration trapping 99.97% of viruses, allergens, and ultra-fine dust.
+              </p>
+              <Link to="/hepa-air-cleaner" className="flex items-center text-primary font-bold hover:text-primary-light transition-colors mt-auto group-hover:translate-x-2 duration-300">
+                Learn more <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </Card>
+
+          {/* Humidifiers */}
+          <Card variant="glass" className="flex flex-col h-full group p-2">
+            <div className="h-48 rounded-xl bg-slate-100 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10"></div>
+              <div className="absolute inset-0 bg-slate-800 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-700">
+                 <Droplet className="h-24 w-24 text-primary-light/40" />
+              </div>
+              <div className="absolute bottom-4 left-4 z-20">
+                 <h3 className="text-xl font-bold text-white text-glow">Humidifiers</h3>
+              </div>
+            </div>
+            <div className="p-4 flex flex-col flex-grow">
+              <p className="text-slate-600 mb-6 flex-grow leading-relaxed text-sm">
+                Maintain optimal moisture levels. Protect your wood floor and skin while saving energy.
+              </p>
+              <Link to="/humidifier" className="flex items-center text-primary font-bold hover:text-primary-light transition-colors mt-auto group-hover:translate-x-2 duration-300">
+                Learn more <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </Card>
+
+          {/* UV Lights */}
+          <Card variant="glass" className="flex flex-col h-full group p-2">
+            <div className="h-48 rounded-xl bg-slate-100 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10"></div>
+              <div className="absolute inset-0 bg-primary-dark flex items-center justify-center transform group-hover:scale-110 transition-transform duration-700">
+                 <Sun className="h-24 w-24 text-white/10" />
+              </div>
+              <div className="absolute bottom-4 left-4 z-20">
+                 <h3 className="text-xl font-bold text-white text-glow">UV Lights</h3>
+              </div>
+            </div>
+            <div className="p-4 flex flex-col flex-grow">
+              <p className="text-slate-600 mb-6 flex-grow leading-relaxed text-sm">
+                Sterilize airborne bacteria, mold spores, and viral contaminants with germicidal UV-C.
+              </p>
+              <Link to="/uv-lights" className="flex items-center text-primary font-bold hover:text-primary-light transition-colors mt-auto group-hover:translate-x-2 duration-300">
+                Learn more <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </Card>
+
+          {/* Furnace Filters */}
+          <Card variant="glass" className="flex flex-col h-full group p-2">
+            <div className="h-48 rounded-xl bg-slate-100 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10"></div>
+              <div className="absolute inset-0 bg-slate-700 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-700">
+                 <Layers className="h-24 w-24 text-white/20" />
+              </div>
+              <div className="absolute bottom-4 left-4 z-20">
+                 <h3 className="text-xl font-bold text-white text-glow">Furnace Filters</h3>
+              </div>
+            </div>
+            <div className="p-4 flex flex-col flex-grow">
+              <p className="text-slate-600 mb-6 flex-grow leading-relaxed text-sm">
+                High-efficiency media filtration protecting your HVAC system parts and home airflow.
+              </p>
+              <Link to="/furnace-filters" className="flex items-center text-primary font-bold hover:text-primary-light transition-colors mt-auto group-hover:translate-x-2 duration-300">
+                Learn more <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </Card>
         </div>
       </Section>
 

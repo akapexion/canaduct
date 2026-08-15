@@ -3,6 +3,10 @@ import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import DuctCleaning from './pages/DuctCleaning';
 import Furnace from './pages/Furnace';
+import HepaAirCleaner from './pages/HepaAirCleaner';
+import Humidifier from './pages/Humidifier';
+import UvLights from './pages/UvLights';
+import FurnaceFilters from './pages/FurnaceFilters';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
@@ -37,6 +41,10 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/duct-cleaning" element={<DuctCleaning />} />
           <Route path="/furnace" element={<Furnace />} />
+          <Route path="/hepa-air-cleaner" element={<HepaAirCleaner />} />
+          <Route path="/humidifier" element={<Humidifier />} />
+          <Route path="/uv-lights" element={<UvLights />} />
+          <Route path="/furnace-filters" element={<FurnaceFilters />} />
         </Routes>
       </Layout>
     </BrowserRouter>
