@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Wind, Phone, Mail, MapPin, CheckCircle2 } from 'lucide-react';
+import logoImg from '../assets/images/logo.png';
 
 // lucide-react dropped branded logos (Facebook/Instagram/Twitter etc.) from its export list,
 // so these are small inline SVGs instead of lucide imports.
@@ -47,10 +48,7 @@ const Footer = () => {
           {/* Brand Col */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-white p-1.5 rounded-lg">
-                <Wind className="h-6 w-6 text-primary" />
-              </div>
-              <span className="font-bold text-2xl text-white tracking-tight">CANADUCT</span>
+              <img src={logoImg} className='invert-0 h-12' />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               Toronto's trusted experts in air duct cleaning and HVAC maintenance. Breathing cleaner air starts here.

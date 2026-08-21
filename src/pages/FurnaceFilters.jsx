@@ -2,6 +2,9 @@ import { ShieldAlert, CheckCircle, Flame, Layers, AlertCircle } from 'lucide-rea
 import Section from '../components/Section';
 import Button from '../components/Button';
 import Card from '../components/Card';
+import filterImg from '../assets/images/furnace-filters.jpg';
+import multiLayerImg from '../assets/images/multi_layer_filtration.jpg';
+import filtersCtaBgImg from '../assets/images/furnace-filters.jpg';
 
 const FurnaceFilters = () => {
   const mervRatings = [
@@ -29,9 +32,12 @@ const FurnaceFilters = () => {
     <div className="flex flex-col w-full">
       {/* Page Header */}
       <section className="bg-slate-900 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/20"></div>
-        <div className="ambient-orb-dark bg-emerald-600/20 w-96 h-96 -top-12 -left-12 opacity-30"></div>
-        <div className="ambient-orb-dark bg-teal-500/20 w-80 h-80 bottom-0 right-10 animate-float"></div>
+        <div className="absolute inset-0">
+          <img src={filterImg} alt="Furnace Filters" className="w-full h-full object-cover opacity-40" />
+        </div>
+        <div className="absolute inset-0 bg-blue-900/30"></div>
+        <div className="ambient-orb-dark bg-primary-light w-96 h-96 -top-12 -left-12 opacity-30"></div>
+        <div className="ambient-orb-dark bg-slate-500/20 w-80 h-80 bottom-0 right-10 animate-float"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">High-Efficiency Furnace Filters</h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
@@ -98,11 +104,8 @@ const FurnaceFilters = () => {
           </div>
 
           <div className="space-y-6">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square md:aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center border-4 border-white">
-               <div className="glass-panel p-10 rounded-2xl text-center">
-                 <Layers className="h-16 w-16 text-emerald-500 mx-auto mb-4" />
-                 <p className="text-slate-800 font-bold tracking-widest uppercase">Multi-Layer Filtration</p>
-               </div>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square md:aspect-[4/3] flex items-center justify-center border-4 border-white">
+               <img src={multiLayerImg} alt="Multi-Layer Filtration" className="w-full h-full object-cover" />
             </div>
             
             <div className="glass-card p-4 rounded-xl flex items-center bg-red-500/5 border border-red-500/20">
@@ -117,7 +120,10 @@ const FurnaceFilters = () => {
 
       {/* CTA Section */}
       <section className="bg-slate-900 relative overflow-hidden py-16">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-slate-900"></div>
+        <div className="absolute inset-0">
+          <img src={filtersCtaBgImg} alt="Optimize HVAC" className="w-full h-full object-cover opacity-35 mix-blend-luminosity" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-sky-950/65 to-blue-900/60 z-0"></div>
         <div className="ambient-orb-dark bg-primary w-96 h-96 right-0 top-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between relative z-10">
           <div className="mb-8 md:mb-0 text-center md:text-left">

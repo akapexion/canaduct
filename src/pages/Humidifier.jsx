@@ -2,6 +2,9 @@ import { Droplet, Thermometer, ShieldAlert, CheckCircle, ArrowRight, Settings } 
 import Section from '../components/Section';
 import Button from '../components/Button';
 import Card from '../components/Card';
+import humidifierImg from '../assets/images/humidifiers.jpg';
+import moistureBalanceImg from '../assets/images/moisture_balance.jpg';
+import humidifierCtaBgImg from '../assets/images/humidifier_cta_bg.jpg';
 
 const Humidifier = () => {
   const options = [
@@ -29,7 +32,10 @@ const Humidifier = () => {
     <div className="flex flex-col w-full">
       {/* Page Header */}
       <section className="bg-slate-900 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/20"></div>
+        <div className="absolute inset-0">
+          <img src={humidifierImg} alt="Humidifier" className="w-full h-full object-cover opacity-40" />
+        </div>
+        <div className="absolute inset-0 bg-sky-900/30"></div>
         <div className="ambient-orb-dark bg-primary-light w-96 h-96 -top-12 -left-12 opacity-30"></div>
         <div className="ambient-orb-dark bg-blue-500/20 w-80 h-80 bottom-0 right-10 animate-float"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -106,18 +112,18 @@ const Humidifier = () => {
             </div>
           </div>
 
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square md:aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center border-4 border-white">
-             <div className="glass-panel p-10 rounded-2xl text-center">
-               <Droplet className="h-16 w-16 text-primary-light mx-auto mb-4" />
-               <p className="text-slate-800 font-bold tracking-widest uppercase">Moisture Balance</p>
-             </div>
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square md:aspect-[4/3] flex items-center justify-center border-4 border-white">
+             <img src={moistureBalanceImg} alt="Moisture Balance" className="w-full h-full object-cover" />
           </div>
         </div>
       </Section>
 
       {/* CTA Section */}
       <section className="bg-slate-900 relative overflow-hidden py-16">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-slate-900"></div>
+        <div className="absolute inset-0">
+          <img src={humidifierCtaBgImg} alt="Restore Comfort" className="w-full h-full object-cover opacity-35" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-sky-950/65 to-blue-900/60 z-0"></div>
         <div className="ambient-orb-dark bg-primary w-96 h-96 right-0 top-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between relative z-10">
           <div className="mb-8 md:mb-0 text-center md:text-left">

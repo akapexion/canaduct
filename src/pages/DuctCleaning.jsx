@@ -2,6 +2,9 @@ import { Wind, CheckCircle, Fan, Sparkles, Activity } from 'lucide-react';
 import Section from '../components/Section';
 import Button from '../components/Button';
 import Card from '../components/Card';
+import ductHeroImg from '../assets/images/duct_cleaning_hero.jpg';
+import ductBeforeImg from '../assets/images/duct_before.jpg';
+import ductAfterImg from '../assets/images/duct_after.jpg';
 
 const DuctCleaning = () => {
   const steps = [
@@ -31,7 +34,10 @@ const DuctCleaning = () => {
     <div className="flex flex-col w-full">
       {/* Page Header */}
       <section className="bg-slate-900 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/20"></div>
+        <div className="absolute inset-0">
+          <img src={ductHeroImg} alt="Duct Cleaning" className="w-full h-full object-cover opacity-45" />
+        </div>
+        <div className="absolute inset-0 bg-sky-900/30"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Professional Air Duct Cleaning</h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
@@ -70,8 +76,14 @@ const DuctCleaning = () => {
           </div>
           
           <div className="grid grid-cols-2 gap-4">
-            <div className="bg-slate-200 rounded-2xl h-48 md:h-64 flex items-center justify-center text-slate-500 font-bold shadow-inner">Dirty Duct (Before)</div>
-            <div className="glass-card bg-primary/5 rounded-2xl h-48 md:h-64 flex items-center justify-center text-primary font-bold mt-8 border border-primary/20 shadow-xl">Clean Duct (After)</div>
+            <div className="rounded-2xl h-48 md:h-64 flex items-center justify-center text-slate-500 font-bold shadow-inner overflow-hidden relative">
+              <img src={ductBeforeImg} alt="Dirty Duct Before" className="w-full h-full object-cover" />
+              <div className="absolute bottom-2 left-2 bg-slate-900/70 text-white px-3 py-1 rounded-md text-sm">Before</div>
+            </div>
+            <div className="rounded-2xl h-48 md:h-64 flex items-center justify-center text-primary font-bold mt-8 border border-primary/20 shadow-xl overflow-hidden relative">
+              <img src={ductAfterImg} alt="Clean Duct After" className="w-full h-full object-cover" />
+              <div className="absolute bottom-2 left-2 bg-primary/90 text-white px-3 py-1 rounded-md text-sm">After</div>
+            </div>
           </div>
         </div>
       </Section>

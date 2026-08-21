@@ -2,6 +2,9 @@ import { Flame, Wrench, Thermometer, ShieldAlert, ArrowRight } from 'lucide-reac
 import Section from '../components/Section';
 import Button from '../components/Button';
 import Card from '../components/Card';
+import furnaceDiagnosisImg from '../assets/images/furnace_diagnosis.jpg';
+import furnaceMaintBgImg from '../assets/images/furnace_maint_bg.jpg';
+import furnaceHeroImg from '../assets/images/furnace-services.jpg';
 
 const Furnace = () => {
   const services = [
@@ -26,7 +29,10 @@ const Furnace = () => {
     <div className="flex flex-col w-full">
       {/* Page Header */}
       <section className="bg-slate-900 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/20"></div>
+        <div className="absolute inset-0">
+          <img src={furnaceHeroImg} alt="Furnace Services" className="w-full h-full object-cover opacity-45" />
+        </div>
+        <div className="absolute inset-0 bg-sky-900/30"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Furnace Services & Repair</h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
@@ -57,11 +63,8 @@ const Furnace = () => {
       <Section bg="white" className="relative overflow-hidden">
         <div className="ambient-orb bg-accent/10 w-96 h-96 -top-20 -right-20 z-0"></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-          <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-2xl aspect-square md:aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center border-4 border-white">
-             <div className="glass-panel p-10 rounded-2xl text-center">
-               <Thermometer className="h-16 w-16 text-primary-light mx-auto mb-4" />
-               <p className="text-slate-800 font-bold tracking-widest uppercase">Visual Diagnosis</p>
-             </div>
+          <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-2xl aspect-square md:aspect-[4/3] flex items-center justify-center border-4 border-white">
+             <img src={furnaceDiagnosisImg} alt="Furnace Diagnosis" className="w-full h-full object-cover" />
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">Signs You Need <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">Furnace Repair</span></h2>
@@ -94,8 +97,10 @@ const Furnace = () => {
 
       {/* Maintenance Plan Banner */}
       <Section bg="primary" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark to-slate-900"></div>
-        <div className="ambient-orb-dark bg-accent w-[500px] h-[500px] -left-20 -top-20 opacity-20"></div>
+        <div className="absolute inset-0">
+          <img src={furnaceMaintBgImg} alt="Furnace Maintenance" className="w-full h-full object-cover opacity-30" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/80 to-slate-900/80"></div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10 glass-panel border-white/10 p-12 rounded-3xl backdrop-blur-xl">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 text-glow">Join Our Annual Maintenance Program</h2>

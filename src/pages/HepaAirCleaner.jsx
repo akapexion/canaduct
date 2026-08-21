@@ -2,6 +2,8 @@ import { Wind, ShieldCheck, Heart, Sparkles, AlertCircle, ArrowRight, Settings }
 import Section from '../components/Section';
 import Button from '../components/Button';
 import Card from '../components/Card';
+import hepaImg from '../assets/images/hepa-air-cleaner.jpg';
+import hepaCtaBgImg from '../assets/images/hepa_cta_bg.jpg';
 
 const HepaAirCleaner = () => {
   const benefits = [
@@ -35,7 +37,10 @@ const HepaAirCleaner = () => {
     <div className="flex flex-col w-full">
       {/* Page Header */}
       <section className="bg-slate-900 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/20"></div>
+        <div className="absolute inset-0">
+          <img src={hepaImg} alt="HEPA Air Cleaner" className="w-full h-full object-cover opacity-45" />
+        </div>
+        <div className="absolute inset-0 bg-sky-900/30"></div>
         <div className="ambient-orb-dark bg-primary-light w-96 h-96 -top-12 -left-12 opacity-30"></div>
         <div className="ambient-orb-dark bg-cyan-500/20 w-80 h-80 bottom-0 right-10 animate-float"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -132,7 +137,10 @@ const HepaAirCleaner = () => {
 
       {/* CTA Section */}
       <section className="bg-slate-900 relative overflow-hidden py-16">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark to-slate-900"></div>
+        <div className="absolute inset-0">
+          <img src={hepaCtaBgImg} alt="Breathe Cleaner Air Today" className="w-full h-full object-cover opacity-20" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-slate-900/90"></div>
         <div className="ambient-orb-dark bg-primary w-96 h-96 right-0 top-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between relative z-10">
           <div className="mb-8 md:mb-0 text-center md:text-left">

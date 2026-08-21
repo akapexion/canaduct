@@ -10,6 +10,8 @@ import FurnaceFilters from './pages/FurnaceFilters';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import ACCoilCleaning from './pages/ACCoilCleaning';
+import DryerVentCleaning from './pages/DryerVentCleaning';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -45,6 +47,8 @@ const App = () => {
           <Route path="/humidifier" element={<Humidifier />} />
           <Route path="/uv-lights" element={<UvLights />} />
           <Route path="/furnace-filters" element={<FurnaceFilters />} />
+          <Route path="/acc-coil-cleaning" element={<ACCoilCleaning />} />
+          <Route path="/dryer-vent-cleaning" element={<DryerVentCleaning />} />
         </Routes>
       </Layout>
     </BrowserRouter>
